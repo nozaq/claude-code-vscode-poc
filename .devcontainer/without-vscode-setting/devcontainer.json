@@ -1,0 +1,11 @@
+{
+  "name": "w/o VSCode settings",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Anthropic.claude-code@2.0.31"
+      ]
+    }
+  }
+}

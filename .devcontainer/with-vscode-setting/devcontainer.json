@@ -1,0 +1,19 @@
+{
+  "name": "w/ VSCode settings",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Anthropic.claude-code@2.0.31"
+      ],
+      "settings": {
+        "claudeCode.environmentVariables": [
+          {
+            "name": "CLAUDE_CODE_USE_BEDROCK",
+            "value": "1"
+          }
+        ]
+      }
+    }
+  }
+}
