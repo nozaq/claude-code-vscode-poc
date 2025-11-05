@@ -1,28 +1,25 @@
-This repository shows Claude Code VSCode extension does not load `.claude/settings.json` file.
-It has two DevContainer definitions, `without-vscode-setting` and `with-vscode-setting` .
+This repository demonstrates that the Claude Code VS Code extension does not read `.claude/settings.json`. It contains two Dev Container definitions: `without-vscode-setting` and `with-vscode-setting`.
 
-`without-vscode-setting` only installs Claude Code VSCode extension without any settings, 
-while `with-vscode-setting` installs the extension and set `CLAUDE_CODE_USE_BEDROCK` environment variable in VSCode settings.
+`without-vscode-setting` installs the Claude Code extension with no VS Code settings.
 
-In both DevContainer settings, the repository contains `.claude/settings.json` file which sets  `CLAUDE_CODE_USE_BEDROCK` environment variable to `1`.
+`with-vscode-setting` installs the extension and sets the `CLAUDE_CODE_USE_BEDROCK` environment variable via VS Code settings.
+
+In both Dev Container definitions, the repository includes a `.claude/settings.json` file that sets `CLAUDE_CODE_USE_BEDROCK` to `1`.
 
 ## Steps to reproduece
 
-1. Open this repository in VSCode with `without-vscode-setting` DevContainer definition.
-2. Open Claude Code Panel from the right-top button.
+1. Open this repository in VS Code using the `without-vscode-setting` Dev Container definition.
+2. Open the Claude Code panel from the button in the top-right.
 
-## Expected behaivor
-
-Claude Code respects `CLAUDE_CODE_USE_BEDROCK` environment variable defined in `.claude/settings.json`, 
-so no sign-in screen should be displayed.
+## Expected behavior
+Claude Code should respect the `CLAUDE_CODE_USE_BEDROCK` environment variable from `.claude/settings.json`, and no sign-in screen should appear.
 
 ## Actual behavior
 
-Claude Code Panel shows a sign-in screen.
+The Claude Code panel displays a sign-in screen.
 
 ![Actual behavior](./actual.png)
 
 ## Additional information
 
-When defining `CLAUDE_CODE_USE_BEDROCK` in VSCode settings(`claudeCode.environmentVariables`), it just works (no sign-in screen is displayed).
-You can confirm this behavior by opening this repository with `with-vscode-setting` DevContainer.
+If `CLAUDE_CODE_USE_BEDROCK` is defined in VS Code settings (`claudeCode.environmentVariables`), it works as expected (no sign-in screen). You can confirm this by opening the repository with the `with-vscode-setting` Dev Container.
